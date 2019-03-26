@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.xstgongyi.eduaid.masterdata.dao.SchoolYearMapper">
+
+	<resultMap id="defaultMap" type="org.xstgongyi.eduaid.masterdata.dataobject.SchoolYearDO">
+		<id column="id" property="id" />
+		<result column="name" property="name" />
+		<result column="active" property="active" />
+	</resultMap>
+
+	<select id="listAll" resultMap="defaultMap">
+		select id, name, active from md_school_year order by id
+	</select>
+	
+	<select id="getById" resultMap="defaultMap">
+		select id, name, active from md_school_year where id = #{id} 
+	</select>
+	
+	<select id="listAllByStatus" resultMap="defaultMap">
+		select id, name, active from md_school_year where active=#{active}
+		order by id
+	</select>
+
+	<insert id="add" useGeneratedKeys="true" keyProperty="id">
+		insert into md_school_year(id, name, active, gmt_created, gmt_updated)
+		values (#{id}, #{name}, #{active}, #{gmtCreated}, #{gmtUpdated})
+	</insert>
+
+	<update id="update">
+		update md_school_year set
+			name = #{name},
+			active = #{active},
+			gmt_updated = #{gmtUpdated}
+		where id = #{id}
+	</update>
+
+</mapper>
