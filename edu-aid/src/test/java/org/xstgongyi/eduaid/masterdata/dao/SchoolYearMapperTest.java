@@ -8,6 +8,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,7 @@ import org.xstgongyi.eduaid.masterdata.dataobject.SchoolYearDO;
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest
+@Ignore	// 只在本地运行
 public class SchoolYearMapperTest {
 
 	@Autowired
@@ -34,6 +36,7 @@ public class SchoolYearMapperTest {
 		}
 	}
 
+	@Ignore	// 不要反复执行，会影响数据
 	@Test
 	public void insert() {
 		SchoolYearDO schoolYear = new SchoolYearDO();
