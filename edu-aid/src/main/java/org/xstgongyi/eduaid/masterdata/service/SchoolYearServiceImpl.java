@@ -56,18 +56,21 @@ public class SchoolYearServiceImpl implements SchoolYearService {
 	@Override
 	@Cacheable(key="'list-all'")
 	public List<SchoolYearDO> listAll() {
+		// TODO add log: invoke dao
 		return dao.listAll();
 	}
 
 	@Override
 	@Cacheable(key="'list-' + #active")
 	public List<SchoolYearDO> listByStatus(String active) {
+		// TODO add log: invoke dao
 		return dao.listAllByStatus(active);
 	}
 
 	@Override
 	@Cacheable(key="#id")
 	public SchoolYearDO getById(Integer id) {
+		// TODO add log: invoke dao
 		return dao.getById(id);
 	}
 
