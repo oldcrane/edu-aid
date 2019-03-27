@@ -5,7 +5,6 @@
 package org.xstgongyi.eduaid.masterdata.dao;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.List;
 
 import org.junit.Assert;
@@ -36,17 +35,15 @@ public class SchoolYearMapperTest {
 	}
 
 	@Test
-	public void add() {
+	public void insert() {
 		SchoolYearDO schoolYear = new SchoolYearDO();
 		schoolYear.setActive("Y");
-		schoolYear.setName("2015-2016学年");
-		//Date now = new Date(System.currentTimeMillis());
-		//schoolYear.setGmtCreated(now);
-		//schoolYear.setGmtUpdated(now);
+		schoolYear.setName("2016-2017学年");
 		LocalDateTime now = LocalDateTime.now();
 		schoolYear.setGmtCreated(now);
 		schoolYear.setGmtUpdated(now);
-		int num = dao.add(schoolYear);
+		
+		int num = dao.insert(schoolYear);
 		System.out.println("rows added:" + num);
 		System.out.println(schoolYear);
 	}
@@ -54,12 +51,14 @@ public class SchoolYearMapperTest {
 	@Test
 	public void update() {
 		int id = 1;
-		SchoolYearDO schoolYear = dao.getById(id);
+		SchoolYearDO schoolYear = dao.getById(id);	
 		Assert.assertNotNull(schoolYear);
+		
 		schoolYear.setActive("N");
 		schoolYear.setGmtUpdated(LocalDateTime.now());
-		int num = dao.update(schoolYear);
-		Assert.assertEquals(1, num);
 		
+		int num = dao.update(schoolYear);
+		Assert.assertEquals(1, num);		
 	}
+
 }

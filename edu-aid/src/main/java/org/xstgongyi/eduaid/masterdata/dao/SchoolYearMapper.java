@@ -4,7 +4,6 @@
  */
 package org.xstgongyi.eduaid.masterdata.dao;
 
-import java.math.BigInteger;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
@@ -26,7 +25,7 @@ public interface SchoolYearMapper {
 	/**
 	 * @return number of rows added.
 	 */
-	int add(SchoolYearDO schoolYear);
+	int insert(SchoolYearDO schoolYear);
 
 	/**
 	 * @return number of rows modified.

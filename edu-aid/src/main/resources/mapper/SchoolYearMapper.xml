@@ -22,7 +22,7 @@
 		order by id
 	</select>
 
-	<insert id="add" useGeneratedKeys="true" keyProperty="id">
+	<insert id="insert" useGeneratedKeys="true" keyProperty="id">
 		insert into md_school_year(id, name, active, gmt_created, gmt_updated)
 		values (#{id}, #{name}, #{active}, #{gmtCreated}, #{gmtUpdated})
 	</insert>

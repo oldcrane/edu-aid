@@ -23,3 +23,7 @@ spring:
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
+
+logging:
+  level:
+     org.xstgongyi.eduaid.masterdata.dao: debug
