@@ -31,5 +31,5 @@ logging:
   level:
      org.xstgongyi.eduaid.masterdata.dao: debug
 
-# develop: 修改jsp无需重新启动，prod环境请勿使用
-server.servlet.jsp.init-parameters.development: true
+# 修改jsp无需重新启动，prod环境请勿使用（仅用于Run as Application启动方式）
+#server.servlet.jsp.init-parameters.development: true

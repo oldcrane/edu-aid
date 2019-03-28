@@ -16,13 +16,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @created 2019-03-27
  */
 @Controller
-public class WelcomeController {
+public class HomeController {
 	
 	@GetMapping("/")
 	public String welcome(Map<String, Object> model) {
 		model.put("org", "xstgongyi.org");
 		model.put("name", "小石头公益");
-		return "welcome";
+		return "home";
 	}
 
 	@RequestMapping("/test")
