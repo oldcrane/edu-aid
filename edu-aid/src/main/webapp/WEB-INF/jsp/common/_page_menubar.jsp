@@ -14,7 +14,7 @@ $(document).ready(function(){
 		{id:5, name:"资金管理"},
 		{id:6, name:"报表和统计"},
 		{id:7, name:"主数据", open:true},
-		{id:71, pId:7, name:"学年", url:"<%=request.getContextPath() %>/masterdata/schoolyear/entry", target:"_self"},
+		{id:702, pId:7, name:"学年", url:"<%=request.getContextPath() %>/masterdata/schoolyear/entry", target:"_self"},
 		{id:8, name:"技术参数维护"}
 	];
 	$.fn.zTree.init($("#g_menu_tree"), setting, zNodes);

@@ -2,26 +2,28 @@
 
 * {	margin:0; padding:0; }
 
-body, html { margin:0; padding:0 !important; width:100%; height:100%; overflow:hidden;}
+body { margin:0; padding:0 !important; width:100%; height:100%; overflow:hidden; font-size:0.75em; }
 
+
+/* page structure */
 
 #g_header { width:100%; height:48px; overflow:hidden; position:absolute; text-align:left; background-color:#999; color:#FFF; }
 
 #g_content { position:absolute!important; top:48px!important; bottom:22px; width:100%; overflow:hidden; height:auto!important; left:0px; }
 
-#g_menubar { height:100%; width:150px; float:left; background-color:#EEE; padding:5px;}
+#g_menubar { height:100%; width:150px; float:left; background-color:#EEE; padding:5px; }
 
 #g_workspace { margin-left:160px; height:100%; background:#FFF; overflow-y:auto; padding:8px; }
 
 #g_footer { width:100%; height:22px; line-height:22px; font-size:12px; letter-spacing:1px; text-align:right; clear:both; position:absolute; bottom:0; left:0; color:#FFF; background-color:#666; }
 
 
-h3 { display:block; }
+/* common elements */
 
-table,th,td { border:1px solid #666; text-align:center; border-collapse:collapse;}
-th { background-color:#CCC; }
-
-table.simpleDataGrid { min-width:450px; }
+table.simpleDataGrid { min-width:360px; border:1px solid #666; border-collapse:collapse; }
 table.simpleDataGrid tr:hover { background-color:#EEE; }
+table.simpleDataGrid th,td { border:1px solid #666; text-align:center; line-height:2em; }
+table.simpleDataGrid th { background-color:#CCC; }
 
-span.clickable { color:blue; font-size:0.8em; cursor:pointer; }
+span.clickable { color:blue; cursor:pointer; padding:0 6px; }
+input { margin:0 6px; padding:0 6px; font-size:1em; }

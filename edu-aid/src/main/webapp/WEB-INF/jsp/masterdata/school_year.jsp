@@ -24,9 +24,10 @@
 
 <div id="g_workspace"><!-- do NOT change it. It's part of the global page structure. -->
 
-<h3 style="display:inline; margin-right:20px;">学年管理</h3>
+<h3>学年管理</h3>
 
-<select id="selectStatus">
+
+<select id="selectActive">
   <option value ="" selected="selected">all</option>
   <option value ="Y">active</option>
   <option value="N">inactive</option>
@@ -36,23 +37,53 @@
 <span id="bthAdd" class="clickable">新增学年</span>
 <br/><br/>
 
-<table class="simpleDataGrid">
-	<tr><th>id</th><th>name</th><th>active</th></tr>
+
+<table id="tableSchoolYears" class="simpleDataGrid">
+	<thead><tr><th>id</th><th>name</th><th>active</th><th></th></tr></thead>
+	<tbody>
+	<!--  
 	<c:forEach var="row" items="${schoolYearList}">
 	<tr>
 		<td>${row.id}</td>
 		<td>${row.name}</td>
 		<td>${row.active}</td>
+		<td></td>
 	<tr>
 	</c:forEach>
+	-->
+	</tbody>
 </table>
 <br/>
-<p>共xx条记录</p>
+<p id="txtCountSummary"></p>
+<br/>
 
-<script type="text/javascript">
-$(document).ready(function(){
-});
-</script>
+<p id="txtMessage"></p>
+
+<div id="dialogAdd" title="增加新的学年" style="display:none;">
+<form id="formAdd">
+	<br/>
+	<label for="name">name:</label>
+	<input type="text" name="name" id="name" value="" maxlength="16" class="text ui-widget-content ui-corner-all"><br/><br/>
+	<label for="active">active:</label>
+	<label><input name="active" type="radio" value="Y" checked="checked" />active</label>
+	<label><input name="active" type="radio" value="N" />inactive</label>
+</form>
+</div>
+
+<div id="dialogEdit" title="修改学年" style="display:none;">
+<form id="formEdit">
+	<input type="hidden" id="id" name="id" />
+	<br/>
+	<label for="name">name:</label>
+	<input type="text" name="name" id="name" maxlength="16" class="text ui-widget-content ui-corner-all"><br/><br/>
+	<label for="active">active:</label>
+	<label><input name="active" type="radio" value="Y" />active</label>
+	<label><input name="active" type="radio" value="N" />inactive</label>
+</form>
+</div>
+
+<script type="text/javascript" src="<%=request.getContextPath() %>/js/masterdata/school_year.js"></script>
+
 
 </div>
 </div>
